@@ -1,0 +1,54 @@
+MongoDB Structure
+
+Databases - Contain our collections
+Collections - Contain our documents
+Documents - Key Value Pairs (BSON) for our data 
+
+How to manipulate and query our documents 
+
+Documents are objects of data stored using BSON (less readable version of JSON) 
+
+Documents do not HAVE TO follow a strict schema
+
+CREATE: 
+
+INSERT command 
+InsertOne  - Adding one object
+InsertMany - Adding many objects
+
+WRITE COMMANDS IN A NOTEPAD / VSCODE / STICKY NOTE
+- Easier to see what you did wrong
+- Easier to copy and paste 
+- Easier to write (with syntax highlighting) 
+
+Create a lizard object and add him to a collection in my database (zoo) 
+I havent created my collection yet, just made the db
+
+db.lizard_pen.insertOne(
+	{
+	
+	  JSON OBJECT
+
+	}
+);
+
+db.lizard_pen.insertOne(
+	{
+		"name" : "Andy",
+		"species" : "Gecko",
+		"length" : 13
+	}
+);
+
+Exercise: 
+
+Insert a new document into your collection
+Your document MUST have atleast 4 key value pairs, atleast 1 String and 1 number 
+
+Access the new document through the GUI
+
+Stretch goal 
+- Adding a boolean value pair
+- Adding an array value pair
+
+
