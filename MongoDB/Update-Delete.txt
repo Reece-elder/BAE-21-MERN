@@ -1,0 +1,64 @@
+Created Data
+Read Data
+
+Update our Documents 
+
+Delete our Documents
+
+To update or delete documents you need to be able to specify the document
+
+Update
+
+Rather than using find() we use update()
+
+To update we need to use query operators to find the document to query.
+
+We use $set to update field(s) 
+
+updateOne - finds the first thing and updates it
+db.lizard_pen.updateOne(
+{
+  "name" : "Tom"
+},
+{ 
+  "$set" : { 
+             "name" : "Tom",
+	     "hasTail": true ,
+             "newField" : "yes"		 
+           }
+}
+);
+
+updateMany - Updates all matching fields
+
+db.lizard_pen.updateMany(
+{
+  "hasTail" : {"$ne" : true}
+}, 
+{
+  "$set" : { "scalyBois" : false }
+}
+);
+
+
+Delete
+
+Works in the same way EXCEPT no need to $set
+
+deleteOne - Find the first thing which matches that query (deleting it)
+deleteMany - Find all of them
+
+db.lizard_pen.deleteOne(
+{
+  "length" : { "$lt" : 15 }
+});
+
+deleteMany - Deletes EVERYTHING that matches the query
+
+db.lizard_pen.deleteMany({});
+
+Exercises 
+- Update ONE document changing a field and giving a new field
+- Update ALL documents giving them a new field
+- Delete one document with a specific query
+- Delete all documents with a different query
