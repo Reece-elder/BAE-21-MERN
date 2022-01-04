@@ -5,6 +5,7 @@ startup_log - Collection
 The data inside are our documents
 
 Creating databases (and editing them) through the command line 
+By clicking the MONGOSH terminal at the bottom of the screen
 
 CREATE: 
 use db_name
