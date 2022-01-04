@@ -40,15 +40,70 @@ db.lizard_pen.insertOne(
 	}
 );
 
-Exercise: 
+JSON Data types (key pairs)
 
-Insert a new document into your collection
-Your document MUST have atleast 4 key value pairs, atleast 1 String and 1 number 
+String / text
+"Name" : "other text"
 
-Access the new document through the GUI
+Number
+"Number" : 1, 1.23, 734739272927373
 
-Stretch goal 
-- Adding a boolean value pair
-- Adding an array value pair
+Boolean
+"isScaly" : true / false
+
+Array - A list of information
+"favFood" : [
+  "Crickets",
+  "Kiwi",
+  "Leaves
+]
+
+db.lizard_pen.insertOne(
+  {
+    "name" : "Michael",
+    "species" : "Iguana",
+    "isScaly" : true,
+    "favFood" : [
+      "Crickets",
+      "Kiwi",
+      "Leaves",
+       true, 
+       1.356
+    ],
+    "age" : 4
+  }
+);
+
+
+Creating Multiple Documents
+
+insertMany([{data},{data2}, {data3}]);
+
+db.lizard_pen.insertMany([
+{
+  "name" : "ButterCup",
+  "species" : "Gecko"
+},
+{
+  "name" : "Mia",
+  "hasTail" : true
+}
+]);
+
+READING
+
+db.collection_name.find();
+
+Exercise - Using insertMany insert an array of 3 documents into your collection
+
+Each document must contain 3 of the data types:
+String
+Array
+boolean
+number
+
+Each document to have a unique key value pair
+
+use find() to grab all data
 
 
