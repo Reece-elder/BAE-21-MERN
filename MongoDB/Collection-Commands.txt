@@ -1,0 +1,46 @@
+MongoDB Collections 
+
+Collections - Generally are stores of similar (follows a schema) data THEY DONT NEED TO 
+
+Databases can contain multiple collections at the same time
+
+Collections =(ish) Tables 
+
+
+COMMANDS: 
+
+CREATE: 
+db.createCollection('name_of_collection');
+
+Succesful when you recieve an OK
+
+READ: 
+
+show collections;
+
+Shows all collections within a database
+
+
+DELETE: 
+db.collection_name.drop();
+
+deletes a collection and returns true if it can be deleted
+
+
+UPDATE: db.collection_name.renameCollection('new_name');
+
+Upper_Case 
+lower_case
+snakeCase
+space case (NO)
+
+Exercise: 
+Make a database to store relevant data (for something) 
+Create 2 new collections (in your new database)
+Update the name of one of the collections
+Delete one collection
+Show all collections 
+
+
+
+
