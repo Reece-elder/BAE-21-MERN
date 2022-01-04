@@ -1,0 +1,29 @@
+Read Queries
+
+What data we want to see from the documents
+What specific documents we want to see 
+
+.find();
+Returns EVERYTHING
+
+Projection - Telling MongoDB what fields you want to see
+
+If Database has 100 documents each with 20 key value pairs, im specifying I want to see 2 of the key value pairs across ALL DOCUMENTS 
+
+db.lizard_pen.find(
+  {},
+  {
+    "name" : true,
+    "_id" : false,
+    "species" : true 
+  }
+);
+
+Saying we ONLY want to see the name
+
+_id is shown by default
+
+When projecting a value that ISNT in a document, the document is still shown but ignores the necessary projection 
+
+Equivalent(ish) -> SELECT name, species FROM lizard_pen
+
