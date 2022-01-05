@@ -35,23 +35,16 @@ db.habitat.insertOne(
 
 db.habitat.updateOne(
 {
-  "name" : "Mustier Swamp"
+  "lizards.name" : "Yusk"
 }, 
 {
   "$set" : {
-    "lizards" : [
-    {
-      "name" : "Yusk",
-      "colour" : "Red"
-    },
-    {
-      "name" : "Elon",
-      "colour" : "Red"
-    }
-   ]
+    "lizards.colour" : "golden"
   }
  }
 );
+
+db.habitat.updateOne(Name:{$elemMatch:{name:"Yusk"}}, {"$set" : {"lizards.$.colour":"Purple"}});
 
 Exercises - Using your current data 
 Create a new document that can embed existing data 
