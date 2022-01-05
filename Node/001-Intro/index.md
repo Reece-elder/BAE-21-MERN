@@ -1,6 +1,6 @@
 # Node
 
-Node provides a JS Runtime, seperating JS from the client and using it for the server side 
+Node provides a JS Runtime, separating JS from the client and using it for the server side 
 
 Open a terminal in this current location (Right click here > Open in integrated terminal) OR by using powershell
 
