@@ -1,0 +1,42 @@
+MongoDB Intro 
+
+Local - Database
+startup_log - Collection
+The data inside are our documents
+
+Creating databases (and editing them) through the command line 
+By clicking the MONGOSH terminal at the bottom of the screen
+
+CREATE: 
+use db_name
+
+Creates a new database and starts using it
+Databases (custom databases) are not visible UNTIL they contain a collection (which has to contain documents)
+
+READ: show dbs    
+
+To see all existing databases
+
+
+DELETE: db.dropDatabase();
+
+Delete an existing database
+When using a database (with use db_name) you can pass in db instead of the name when doing commands 
+
+db.dropDatabase();
+
+UPDATE: 
+old_db.copyDatabase('old_db', 'new_db);
+use old_db
+db.dropDatabase();
+
+copyDatabase is deprecated, use MongoDB docs to see the equivalent
+
+Copy an existing database
+use the new database (you just copied) 
+deleting the old database 
+
+Exercise - 
+Create 2 databases
+Show all databases
+Delete one of the new databases 

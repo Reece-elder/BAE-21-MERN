@@ -1,0 +1,109 @@
+MongoDB Structure
+
+Databases - Contain our collections
+Collections - Contain our documents
+Documents - Key Value Pairs (BSON) for our data 
+
+How to manipulate and query our documents 
+
+Documents are objects of data stored using BSON (less readable version of JSON) 
+
+Documents do not HAVE TO follow a strict schema
+
+CREATE: 
+
+INSERT command 
+InsertOne  - Adding one object
+InsertMany - Adding many objects
+
+WRITE COMMANDS IN A NOTEPAD / VSCODE / STICKY NOTE
+- Easier to see what you did wrong
+- Easier to copy and paste 
+- Easier to write (with syntax highlighting) 
+
+Create a lizard object and add him to a collection in my database (zoo) 
+I havent created my collection yet, just made the db
+
+db.lizard_pen.insertOne(
+	{
+	
+	  JSON OBJECT
+
+	}
+);
+
+db.lizard_pen.insertOne(
+	{
+		"name" : "Andy",
+		"species" : "Gecko",
+		"length" : 13
+	}
+);
+
+JSON Data types (key pairs)
+
+String / text
+"Name" : "other text"
+
+Number
+"Number" : 1, 1.23, 734739272927373
+
+Boolean
+"isScaly" : true / false
+
+Array - A list of information
+"favFood" : [
+  "Crickets",
+  "Kiwi",
+  "Leaves
+]
+
+db.lizard_pen.insertOne(
+  {
+    "name" : "Michael",
+    "species" : "Iguana",
+    "isScaly" : true,
+    "favFood" : [
+      "Crickets",
+      "Kiwi",
+      "Leaves",
+       true, 
+       1.356
+    ],
+    "age" : 4
+  }
+);
+
+
+Creating Multiple Documents
+
+insertMany([{data},{data2}, {data3}]);
+
+db.lizard_pen.insertMany([
+{
+  "name" : "ButterCup",
+  "species" : "Gecko"
+},
+{
+  "name" : "Mia",
+  "hasTail" : true
+}
+]);
+
+READING
+
+db.collection_name.find();
+
+Exercise - Using insertMany insert an array of 3 documents into your collection
+
+Each document must contain 3 of the data types:
+String
+Array
+boolean
+number
+
+Each document to have a unique key value pair
+
+use find() to grab all data
+
+

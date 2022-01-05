@@ -1,0 +1,116 @@
+Read Queries
+
+What data we want to see from the documents
+What specific documents we want to see 
+
+.find();
+Returns EVERYTHING
+
+Projection - Telling MongoDB what fields you want to see
+
+If Database has 100 documents each with 20 key value pairs, im specifying I want to see 2 of the key value pairs across ALL DOCUMENTS 
+
+db.lizard_pen.find(
+  {},
+  {
+    "name" : true,
+    "_id" : false,
+    "species" : true 
+  }
+);
+
+Saying we ONLY want to see the name
+
+_id is shown by default
+
+When projecting a value that ISNT in a document, the document is still shown but ignores the necessary projection 
+
+Equivalent(ish) -> SELECT name, species FROM lizard_pen
+
+
+Simple queries to filter out data
+
+Passing in a partial object, if any document matches that object it returns the whole documnet
+
+db.lizard_pen.find(
+{
+  "species" : "Gecko"
+}
+);
+
+find() - Searches through the ENTIRE collection and finds all of the matching documents
+
+findOne(); the same thing but finds and returns the first instance. When ONE thing is found, it stops
+
+db.lizard_pen.findOne(
+{
+  "age" : 4
+}
+);
+
+Find you can pass in any value (String, text, array, boolean)
+
+db.lizard_pen.findOne(
+{
+  "favFood" : ["Crickets", "Kiwi", "Leaves", true, 1.356]
+}
+);
+
+
+Query Operators 
+Check MORE than x = y
+
+return IF length is GreaterThan 15
+db.lizard_pen.find(
+  {
+    "length" : {"$gt" : 12}
+  }
+);
+
+db.lizard_pen.find(
+  {
+    "name" : {"$ne" : "monty"}
+  }
+);
+
+$gt  = GreaterThan
+$lt  = LessThan
+$gte = GreaterThanorEqual
+$ne  = NotEqual
+
+ARE CASE SENSITIVE!!!
+
+Queries for Arrays 
+
+Is X a member of array y 
+is x in y
+is x not in y
+$in  = in
+$nin = notIn
+
+db.lizard_pen.findOne(
+{
+  "favFood" : {"$nin" : [ "Pizza" ] }
+}
+);
+
+
+Exercise:
+
+- Create 2 more documentd to add to your collection (Look at the queries below, you may need to add animals with arrays etc)
+- Using the following queries return some data: 
+    - Read all
+    - Equals 
+    - Doesnt Equal
+    - Less than
+    - Greater Than or Equals
+    - In
+    - Not in 
+
+Stretch goal: 
+For each query only show the data you're querying and a name / species name etc.
+
+
+
+
+

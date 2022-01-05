@@ -1,0 +1,54 @@
+Embedded Documents
+
+Creating a single document (or multiple with insertMany) that contain a number of child documents
+
+Useful for one to many, such as habitats and animals 
+
+db.habitat.insertOne(
+{
+  "name" : "Musty Swamp", 
+  "capacity" : 5, 
+  "lizards" : 
+    {
+      "name" : "Yusk",
+      "colour" : "Green"
+    }
+}
+);
+
+db.habitat.insertOne(
+{
+  "name" : "Mustier Swamp", 
+  "capacity" : 5, 
+  "lizards" : [
+    {
+      "name" : "Yusk",
+      "colour" : "Green"
+    },
+    {
+      "name" : "Elon",
+      "colour" : "Purple"
+    },
+   ]
+}
+);
+
+db.habitat.updateOne(
+{
+  "lizards.name" : "Yusk"
+}, 
+{
+  "$set" : {
+    "lizards.colour" : "golden"
+  }
+ }
+);
+
+db.habitat.updateOne(Name:{$elemMatch:{name:"Yusk"}}, {"$set" : {"lizards.$.colour":"Purple"}});
+
+Exercises - Using your current data 
+Create a new document that can embed existing data 
+
+Insert a document with an array of embedded documents into a new collection 
+
+Stretch goal - Update the values of the embedded document 
