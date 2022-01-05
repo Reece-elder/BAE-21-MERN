@@ -44,9 +44,6 @@ for (let i = 0; i < cattery.length; i++){
     console.log(cattery[i]);
 }
 
-
-
-
 // Destructuring - Extracting information from objects / arrays for ease of use
 const movie = {
     title: "Starship Troopers",
