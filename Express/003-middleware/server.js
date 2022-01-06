@@ -30,17 +30,36 @@ app.use((req, res, next) => {
     next();
 });
 
-// 
+// Nested Middlware
+// Middlewares are arrow functions saved as variables
+const logger = (req, res, next) => {
+    console.log(new Date());
+    next();
+}
+
+const nested = (req, res, next) => {
+    console.log("Nested middleware!");
+    next();
+}
+
 
 // Request
 
+// Request with nested middleware
+// app.get("path", nested_middleware, arrow function on what it does)
+app.get('/nested', logger, nested, (req, res) => {
+    console.log("Request fired");
+    res.send("nested middlware fired");
+})
+
 app.get('/' , (req, res) => {
+    console.log("Basic middleware");
     res.send("site accessed!");
 })
 
-app.post('/post', (req, res) => {
-    res.send("Posted data");
-})
+// app.post('/post', (req, res) => {
+//     res.send("Posted data");
+// })
 
 // Starting server on port 5015
 const server = app.listen(5015, () => {
