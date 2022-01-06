@@ -9,9 +9,11 @@ const app = express();
 
 // To tell our app what to do when it recieves JSON files
 app.use(express.json());
+//next();
 
 // CORS - Will prevent any unwanted CORS errors
 app.use(cors());
+// next();
 
 // Middleware (uses app.use)
 // Middleware `does something` then calls next()
@@ -33,8 +35,17 @@ app.use((req, res, next) => {
 // Nested Middlware
 // Middlewares are arrow functions saved as variables
 const logger = (req, res, next) => {
+    console.log(req.params);
     console.log(new Date());
     next();
+}
+
+const passwordChecker = (req, res, next) => {
+    if(req.body.password == "password123"){
+        next(); // If true pass onto the request
+    } else {
+        error();
+    }
 }
 
 const nested = (req, res, next) => {
@@ -47,7 +58,7 @@ const nested = (req, res, next) => {
 
 // Request with nested middleware
 // app.get("path", nested_middleware, arrow function on what it does)
-app.get('/nested', logger, nested, (req, res) => {
+app.get('/nested/:id', logger, nested, passwordChecker, (req, res) => {
     console.log("Request fired");
     res.send("nested middlware fired");
 })
