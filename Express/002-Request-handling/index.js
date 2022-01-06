@@ -45,6 +45,43 @@ app.post('/newSnake', (req, res) => {
     // res.send("hello");
 })
 
+// Delete request
+app.delete('/deleteById/:id', (req) => {
+    console.log(req.params.id);
+});
+
+// GET request
+app.get('/get', (req) => {
+    console.log(req.query);
+    console.log(req.query.species);
+});
+
+// Create request
+app.post('/newSnake', (req) => {
+    console.log("========================");
+    const body = req.body;
+    console.log(body);
+});
+
+// Update Request
+app.put('/update/:id', (req) => {
+    console.log(req.params);
+    console.log(req.body);
+});
+
+
+// Responses to data 
+
+app.get('/helloThere/:name', (req, res) => {
+    const name = req.params.name;
+    res.status(202).send(`Hey ${name}, this is from the backend ( ͡° ͜ʖ ͡°)`);
+});
+
+app.get('/error', (req, res) => {
+    res.status(500).send("uh oh.. ");
+})
+
+
 
 
 // The app listening function is at the bottom

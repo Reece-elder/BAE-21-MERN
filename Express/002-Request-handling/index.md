@@ -31,6 +31,16 @@ Create the 4 basic crud (CREATE, READ, UPDATE, DELETE)
 Each request should console.log out the request
 
 Delete - Takes in an id and prints it out (URL Param)
-Read - Takes in URL Query and prints them out 
+Read   - Takes in URL Query and prints them out 
 Create - Takes in a body (using postman) and prints it out
 Update - Takes in an id and body, prints them both out (Either way)
+
+# Response
+
+Responses are what the server sends to the client, 
+Without specifying a response the client is hanging and waiting for some data
+
+res.send()   -> What you're passing back 
+res.status() -> HTTP status of the response
+
+Exercise - Add a response to each of your requests, with an appropriate status code and some text to display 
