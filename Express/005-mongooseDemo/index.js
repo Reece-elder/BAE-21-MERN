@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const lizardRoutes = require('./routes/lizardRoutes.js');
 
 // Importing in the mongoose stuff
 const mongoose = require('mongoose');
@@ -21,6 +22,9 @@ mongoose.connect('mongodb://localhost:27017/zoo' , {useNewUrlParser: true},
         console.log("Connected to DB :D ");
     }
 });
+
+// Use routes
+app.use('/lizard', lizardRoutes);
 
 // Front end has a form that produces `data`
 // Data is sent through the browser to the backend 

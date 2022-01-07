@@ -9,7 +9,7 @@ const {Schema, model} = mongoose;
 // Schema for favFood Array
 // Basically embedded document but with only one type
 const favFoodSchema = new Schema({
-    name: String, 
+    nameOfFood: String, 
     typeOfFood: String
 });
 
@@ -21,10 +21,11 @@ const lizardSchema = new Schema({
         required: true,
         minlength: 2
     },
-    colour: String,
-    rating: Number,
-    isScary: Boolean,
-    length: Number,
+
+    // colour: String,
+    // rating: Number,
+    // isScary: Boolean,
+    // length: Number,
 
     // Array of embedded documents
     favFood: [favFoodSchema],
