@@ -27,7 +27,7 @@ router.get('/get/:id',(req, res) => {
 });
 
 // Request for a post is *generally* going to be a body of data
-router.post('/post', (req, res) => {
+router.post('/post', (req, res, next) => {
     console.log(req.body);
 
     // Pass the req body into the schema, generate a new lizard object
@@ -38,6 +38,10 @@ router.post('/post', (req, res) => {
 
         // response is 201 and return the name of lizard and string
         res.status(201).send(`${result.lizardName} added to database :) `);
+    })
+    .catch((error) => {
+        const err = new Error('Data is incorrect :( ');
+        next(err);
     });
 
 });
