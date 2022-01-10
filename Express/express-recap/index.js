@@ -35,7 +35,12 @@ app.use((err, req, res, next) => {
     console.log(err.stack);
     //err.message = string added when creating error in first place
     res.status(500).send(err.message);
+    next(err);
 });
+
+app.use((err, req, res, next) => {
+    console.log(err.message);
+})
 
 // Tell our index.js to listen to a specific port (allows other tools to access the server)
 const server = app.listen(5015, () => {
