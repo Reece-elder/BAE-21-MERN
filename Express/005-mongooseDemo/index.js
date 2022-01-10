@@ -11,6 +11,12 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+// Error Handling
+app.use((err, req, res, next) => {
+    console.log(err.stack);
+    res.status(500).send(err.message);
+});
+
 // Database connection - URI similar to URL, it is a link to a service through the internet
 // Connect to MongoDB with - mongoose.connect(uri, options)
 // mongodb URI - mongodb://localhost:27017/<db_name>
