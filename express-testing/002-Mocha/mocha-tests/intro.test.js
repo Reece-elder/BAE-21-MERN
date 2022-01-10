@@ -10,6 +10,16 @@ describe('My first group of tests', function(){
         console.log("Hello");
     });
 
+    it('will print the number 5', function() {
+        console.log(5);
+    })
+
+});
+
+describe('Second group of tests', function() {
+    it('Will print Hello World', function() {
+        console.log("Hello World");
+    })
 });
 
 // To run mocha tests 
