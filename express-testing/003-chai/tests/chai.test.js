@@ -43,3 +43,53 @@ describe('Basic testing process', function(){
     });
 
 });
+
+describe('exercise questions', function(){
+
+    it('An object should have property name', function(){
+
+        // Arrange
+        let testObject = {
+            name : "test Object"
+        };
+
+        // Act 
+        testObject.name = "new data";
+
+        // Assert
+        expect(testObject).to.contain.keys('name');
+        expect(testObject.name).to.be.equal('new data');
+
+    });
+
+    it('A String should contain "Reece"', function(){
+
+        // Arrange
+        let testString = "Hello Reece";
+        let fruitArray = ["Apple", "Banana", "Kiwi"]
+
+        // Act
+
+        // Assert
+        expect(testString).to.contain("Reece");
+        expect(fruitArray).to.include("Banana");
+
+    });
+
+    it('should check if 5 is odd', function(){
+
+        // Arrange
+        let num = 5;
+        let odd;
+
+        // Act
+        if(num % 2 == 0){
+            odd = false;
+        } else {
+            odd = true;
+        };
+
+        // Assert
+        expect(odd).to.be.equal(true);
+    });
+});
