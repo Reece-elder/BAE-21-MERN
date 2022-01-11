@@ -10,6 +10,36 @@ chai.use(chaiHttp);
 
 describe('route testing', function(){
 
+    // Before function that will add atleast one document 
+    // so we can delete / get without needing to add anything
+
+    let testID;
+
+    before(function(done){
+        console.log("Setup of environment");
+
+        // Generate a new lizard object
+        const testLizard = new Lizard({
+            "lizardName" : "test name",
+            "colour" : "test colour",
+            "rating" : 5,
+            "isScary" : true
+        });
+        testLizard.save().then((result) => {
+            // Saving the _id of the lizard we create so other tests can delete it
+            testID = result._id.toString();
+            done();
+        });
+    });
+
+    // Adding an after function that will clear ALL DATA 
+    after(function(done) {
+        Lizard.deleteMany({}).then(() => {
+            console.log("Everything deleted!");
+            done();
+        });
+    });
+
     // Object that can be used THROUGHOUT testing
     const testLizard = {
         lizardName: "test name",

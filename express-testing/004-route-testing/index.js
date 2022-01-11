@@ -17,10 +17,16 @@ app.use((err, req, res, next) => {
     res.status(500).send(err.message);
 });
 
+// Is the prod DB URI
+// let dbURI = "zoo";
+
+// Test DB URI
+let dbURI = "testZoo";
+
 // Database connection - URI similar to URL, it is a link to a service through the internet
 // Connect to MongoDB with - mongoose.connect(uri, options)
 // mongodb URI - mongodb://localhost:27017/<db_name>
-mongoose.connect('mongodb://localhost:27017/zoo' , {useNewUrlParser: true}, 
+mongoose.connect(`mongodb://localhost:27017/${dbURI}` , {useNewUrlParser: true}, 
 (error) => {
     if(error) {
         console.log("Cant connect to DB :( ");
