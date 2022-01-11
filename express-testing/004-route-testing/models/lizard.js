@@ -22,24 +22,24 @@ const lizardSchema = new Schema({
         minlength: 2
     },
 
-    // colour: String,
-    // rating: Number,
-    // isScary: Boolean,
+    colour: String,
+    rating: Number,
+    isScary: Boolean,
     // length: Number,
 
     // Array of embedded documents
-    favFood: [favFoodSchema],
+    // favFood: [favFoodSchema],
     // Embedded document
-    favToy: {
-        toyName: String,
-        cost: {
-            type: Number,
-            required: true,
-            max: 15
-        }
-    },
+    // favToy: {
+    //     toyName: String,
+    //     cost: {
+    //         type: Number,
+    //         required: true,
+    //         max: 15
+    //     }
+    // },
     // Array of Numbers
-    favNumbers: [Number]
+    // favNumbers: [Number]
 });
 
 // Creating the lizard model
