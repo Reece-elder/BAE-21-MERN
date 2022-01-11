@@ -10,6 +10,14 @@ chai.use(chaiHttp);
 
 describe('route testing', function(){
 
+    // Object that can be used THROUGHOUT testing
+    const testLizard = {
+        lizardName: "test name",
+        colour: "test colour",
+        rating: 1,
+        isScary: true
+    };
+
     // pass in the word done, to let chai know when the async code is done
     it('Should respond with "Test path succesful"', function(done){
 
@@ -39,5 +47,68 @@ describe('route testing', function(){
             done();
         });
     });
+
+    it('Should post data to the DB and return <name> added to db', function(done){
+
+        // Arrange
+        chai.request(server)
+
+        // Act
+        .post('/lizard/post')
+
+        // Sending data as a body you use .send(data)
+        .send(testLizard)
+
+        // Will be the same for more or less every route
+        .end((err, res) => {
+
+            if(err) {
+                console.log("Error occured");
+                done(err);
+            };
+
+            // Assertion
+            expect(res).to.have.status(201);
+            expect(res).to.not.be.null;
+            expect(res).to.have.property('text',`${testLizard.lizardName} added to database :) `);
+            done();
+        });
+    });
+
+    it('Should return all lizards from the db', function(done){
+
+        // Arrange
+        chai.request(server)
+
+        // Act
+        .get('/lizard/getAll')
+
+                // Will be the same for more or less every route
+                .end((err, res) => {
+
+                    if(err) {
+                        console.log("Error occured");
+                        done(err);
+                    };
+        
+                    // Assertion
+                    const resBody = res.body;
+                    expect(res).to.have.status(200);
+                    expect(resBody).to.not.be.null;
+
+                    // .map - Loops through an array and runs a command
+                    resBody.map((lizard) => {
+                        expect(lizard).to.be.a("Object");
+                        expect(lizard).to.contain.keys("lizardName");
+                    });
+                    done();
+                });         
+    });
+
+    // Exercise - Either in groups or on your own
+    // Add tests to your most up to date project, with atleast 4 routes in
+    // Post test, get test, update test and delete test
+
+    // Stretch goal - See how you can use hooks (before, after) to your advantage
 
 })
