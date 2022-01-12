@@ -7,6 +7,7 @@ import PizzaOrder from './components/004-props/PizzaOrder';
 import ParentArray from './components/004-props/array/Parent';
 import './css/App.css';
 import Manager from './components/005-state/Manager';
+import ControlledInput from './components/006-Forms/ControlledInput';
 // import Manager from './components/004-props/contactcard-exercise/Manager';
 
 function App() {
@@ -20,7 +21,8 @@ function App() {
       {/* <PizzaOrder/> */}
       {/* <ParentArray/> */}
       {/* <Manager/> */}
-      <Manager/>
+      {/* <Manager/> */}
+      <ControlledInput/>
     </div>
   );
 }

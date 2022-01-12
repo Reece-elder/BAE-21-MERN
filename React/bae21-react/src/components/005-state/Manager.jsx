@@ -16,6 +16,11 @@ const Manager = () => {
 
     console.log(count);
     console.log(typeof count);
+    console.log(setCount);
+
+    const printName = () =>{
+        console.log("reece");
+    };
 
     // Every time state changes data is pulled again 
     // setState - causes re renders
