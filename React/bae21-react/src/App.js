@@ -6,11 +6,12 @@ import Pizza from './components/004-props/Pizza';
 import PizzaOrder from './components/004-props/PizzaOrder';
 import ParentArray from './components/004-props/array/Parent';
 import './css/App.css';
-import Manager from './components/005-state/Manager';
+// import Manager from './components/005-state/Manager';
 import ControlledInput from './components/006-Forms/ControlledInput';
 import UserPassComp from './components/state-exercises/UserPassComp';
 import SearchTable from './components/state-exercises/SearchTable';
 // import Manager from './components/004-props/contactcard-exercise/Manager';
+import Manager from './components/007-lifting-state/Manager';
 
 function App() {
   return (
@@ -26,7 +27,8 @@ function App() {
       {/* <Manager/> */}
       {/* <ControlledInput/> */}
       {/* <UserPassComp/> */}
-      <SearchTable/>
+      {/* <SearchTable/> */}
+      <Manager/>
     </div>
   );
 }
