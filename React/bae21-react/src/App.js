@@ -4,6 +4,7 @@ import Page from './components/003-Parent-child/Page';
 import Parent from './components/003-Parent-child/Parent';
 import Pizza from './components/004-props/Pizza';
 import PizzaOrder from './components/004-props/PizzaOrder';
+import ParentArray from './components/004-props/array/Parent';
 import './css/App.css';
 
 function App() {
@@ -14,7 +15,8 @@ function App() {
       <CompWithVars/> */}
       {/* <Parent/> */}
       {/* <Page/> */}
-      <PizzaOrder/>
+      {/* <PizzaOrder/> */}
+      <ParentArray/>
     </div>
   );
 }
