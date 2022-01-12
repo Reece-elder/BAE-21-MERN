@@ -17,7 +17,9 @@ const Child = (props) => {
         })
         } */}
         <SubChild fruit="Apple"/>
-        {fruitArray.map((fruit, i) => <SubChild key={i} fruit={fruit}/> )}
+        {fruitArray.map((fruit, i) => {
+           return <SubChild key={i} fruit={fruit}/> })
+        }  
         </div>
         
      );
