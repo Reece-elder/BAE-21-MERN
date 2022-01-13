@@ -6,7 +6,7 @@ import Pizza from './components/004-props/Pizza';
 import PizzaOrder from './components/004-props/PizzaOrder';
 import ParentArray from './components/004-props/array/Parent';
 import './css/App.css';
-// import Manager1 from './components/005-state/Manager';
+import Manager1 from './components/005-state/Manager';
 import ControlledInput from './components/006-Forms/ControlledInput';
 import UserPassComp from './components/state-exercises/UserPassComp';
 import SearchTable from './components/state-exercises/SearchTable';
