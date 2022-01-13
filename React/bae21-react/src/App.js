@@ -12,6 +12,7 @@ import UserPassComp from './components/state-exercises/UserPassComp';
 import SearchTable from './components/state-exercises/SearchTable';
 // import Manager from './components/004-props/contactcard-exercise/Manager';
 import Manager from './components/007-lifting-state/Manager';
+import Clock from './components/008-useEffect/Clock';
 
 function App() {
   return (
@@ -28,7 +29,8 @@ function App() {
       {/* <ControlledInput/> */}
       {/* <UserPassComp/> */}
       {/* <SearchTable/> */}
-      <Manager/>
+      {/* <Manager/> */}
+      <Clock/>
     </div>
   );
 }
