@@ -27,32 +27,33 @@ import About from './components/009-routing/About';
 import Shop from './components/009-routing/Shop';
 import Manager from './components/005-state/Manager';
 import HookParent from './components/008-useEffect/HookParent';
+import Bar from './components/010-request-handling/Bar';
 
 function App() {
   return (
     <div className="App">
 
-      {/* Router is our div that contains everything */}
-      <BrowserRouter>
+      Router is our div that contains everything
+      {/* <BrowserRouter> */}
         {/* This component will be rendered on EVERY page */}
-        <Nav/>
+        {/* <Nav/> */}
         {/* <HookParent/> */}
         {/* <Manager1/> */}
 
         {/* Everything in switch are the page components that you want to switch between */}
-        <Routes>
+        {/* <Routes> */}
 
           {/* what path to take to get to this component */}
-          <Route path="/" element={<Home/>}/>
+          {/* <Route path="/" element={<Home/>}/> */}
 
-          <Route path="/about" element={<About/>}/>
+          {/* <Route path="/about" element={<About/>}/> */}
 
           {/* Add the url paramater you're expecting to your router */}
-          <Route path="/shop/:id"element={<Shop/>}/>
+          {/* <Route path="/shop/:id"element={<Shop/>}/> */}
 
-        </Routes>
-        <Footer/>
-      </BrowserRouter>
+        {/* </Routes> */}
+        {/* <Footer/> */}
+      {/* </BrowserRouter> */}
 
       {/* Components MUST BEGIN WITH CAPITAL LETTER Ctrl + / to auto comment */}
       {/* <HelloWorld/>
@@ -68,6 +69,7 @@ function App() {
       {/* <SearchTable/> */}
       {/* <Manager/> */}
       {/* <Clock/> */}
+      <Bar/>
     </div>
   );
 }
