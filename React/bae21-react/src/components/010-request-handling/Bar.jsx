@@ -4,7 +4,7 @@ import axios from 'axios';
 const Bar = () => {
 
     // Our state is going to be the data we pull from the api
-    const [beerData, setBeerData] = useState("");
+    const [beerData, setBeerData] = useState([]);
 
     // State to check if the API has errored
     const [error, setError] = useState(null);
@@ -12,8 +12,13 @@ const Bar = () => {
     // State to check if the data has loaded
     const [loaded, setLoaded] = useState(false);
 
-    // Create the function to pull the data from the API
-    const getData = () => {
+    // exercise - Using a public API of choice
+    // use axios to pull the data down and be able to console.log it out 
+
+    // useEffect to pull the data
+    // Passing in a function to pull our data
+    // Passing in [] runs once when the page loads and no more
+    useEffect(() => {
 
         console.log(beerData);
 
@@ -27,11 +32,8 @@ const Bar = () => {
             setLoaded(true);
 
             // What does the data look like when pulling it
-            console.log(response);
             setBeerData(response.data)
             console.log("===========================");
-            console.log(response.data);
-            console.log(beerData);
         })
         .catch((error) => {
             // If there is an error in pulling data do the following:
@@ -40,15 +42,7 @@ const Bar = () => {
             setLoaded(true);
             setError(error);
         });
-    };
-
-    // exercise - Using a public API of choice
-    // use axios to pull the data down and be able to console.log it out 
-
-    // useEffect to pull the data
-    // Passing in a function to pull our data
-    // Passing in [] runs once when the page loads and no more
-    useEffect(getData(),[beerData]);
+    },[loaded]);
 
     return ( 
         <div>
