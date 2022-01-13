@@ -36,7 +36,7 @@ function App() {
       <BrowserRouter>
         {/* This component will be rendered on EVERY page */}
         <Nav/>
-        <HookParent/>
+        {/* <HookParent/> */}
         {/* <Manager1/> */}
 
         {/* Everything in switch are the page components that you want to switch between */}
@@ -47,7 +47,8 @@ function App() {
 
           <Route path="/about" element={<About/>}/>
 
-          <Route path="/shop"element={<Shop/>}/>
+          {/* Add the url paramater you're expecting to your router */}
+          <Route path="/shop/:id"element={<Shop/>}/>
 
         </Routes>
         <Footer/>

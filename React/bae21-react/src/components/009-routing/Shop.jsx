@@ -1,6 +1,15 @@
+import { useParams } from "react-router-dom";
+
 const Shop = () => {
+
+    // shop/id6282730393
+    // Grab the url paramater from the URL
+    // Save it as a value called id
+    const {id} = useParams();
+
     return ( 
-        <h3> Shop </h3>
+        // Use value in our H3
+        <h3> Shop page of id: {id} </h3>
      );
 }
  
