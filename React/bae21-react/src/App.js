@@ -6,7 +6,7 @@ import Pizza from './components/004-props/Pizza';
 import PizzaOrder from './components/004-props/PizzaOrder';
 import ParentArray from './components/004-props/array/Parent';
 import './css/App.css';
-import Manager1 from './components/005-state/Manager';
+// import Manager1 from './components/005-state/Manager';
 import ControlledInput from './components/006-Forms/ControlledInput';
 import UserPassComp from './components/state-exercises/UserPassComp';
 import SearchTable from './components/state-exercises/SearchTable';
@@ -26,6 +26,7 @@ import Home from './components/009-routing/Home';
 import About from './components/009-routing/About';
 import Shop from './components/009-routing/Shop';
 import Manager from './components/005-state/Manager';
+import HookParent from './components/008-useEffect/HookParent';
 
 function App() {
   return (
@@ -35,7 +36,8 @@ function App() {
       <BrowserRouter>
         {/* This component will be rendered on EVERY page */}
         <Nav/>
-        <Manager1/>
+        <HookParent/>
+        {/* <Manager1/> */}
 
         {/* Everything in switch are the page components that you want to switch between */}
         <Routes>
