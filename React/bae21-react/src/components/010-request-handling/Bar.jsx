@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from 'axios';
 import Beer from "./Beer";
+import Button from 'react-bootstrap/Button'
 
 const Bar = () => {
 
@@ -102,7 +103,11 @@ const Bar = () => {
                 <h2> Loads if the data is fine! </h2>
 
                 <input type="number" name="beerId" onChange={(event) => tempId = (event.target.value)}/>
-                <button type="button" onClick={() => {getBeerId(tempId)}}>Get Beer By Id </button>
+                <button type="button"> Get Beer By Id </button>
+
+                <Button variant="primary" size="lg" onClick={() => {getBeerId(tempId)}}>
+                    Get Beer by ID 
+                </Button>
 
                 {/* Iterating over our array, printing off a h4 for each beer in the array */}
                 {/* Order of paramaters matters, otherwise you end up debugging for half an hour on a friday morning */}

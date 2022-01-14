@@ -28,6 +28,7 @@ import Shop from './components/009-routing/Shop';
 import Manager from './components/005-state/Manager';
 import HookParent from './components/008-useEffect/HookParent';
 import Bar from './components/010-request-handling/Bar';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
